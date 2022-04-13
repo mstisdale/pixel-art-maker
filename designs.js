@@ -26,3 +26,5 @@ function populate(size) {
   }
 }
 }
+
+makeGrid(32);

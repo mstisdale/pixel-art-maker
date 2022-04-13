@@ -5,7 +5,7 @@
 
 function makeGrid(size) {
 
-// Your code goes here!
+// Not finished :/
 function make(size) {
   container.style.setProperty('--size', size)
   for (let i = 0; i < size * size; i++) {

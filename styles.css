@@ -12,10 +12,6 @@ h2 {
     margin: 1em 0 0.25em;
 }
 
-h2:first-of-type {
-    margin-top: 0.5em;
-}
-
 table,
 tr,
 td {
@@ -56,7 +52,7 @@ input[type=number] {
   --grid-rows: 1;
 }
 
-#container {
+.container {
   display: grid;
   grid-gap: 1em;
   grid-template-rows: repeat(var(--grid-rows), 1fr);

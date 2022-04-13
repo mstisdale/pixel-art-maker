@@ -6,7 +6,7 @@
 function makeGrid(size) {
 
 // Your code goes here!
-function populate(size) {
+function make(size) {
   container.style.setProperty('--size', size)
   for (let i = 0; i < size * size; i++) {
     const div = document.createElement('div')

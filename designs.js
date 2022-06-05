@@ -1,28 +1,49 @@
-// Select color input
-// Select size input
+// Setup canvas and get width and height values
 
-// When size is submitted by the user, call makeGrid()
+var PixelCanvas = {};
 
-function makeGrid(size) {
+PixelCanvas.getInput = function () {
+    var height = document.querySelector("#inputHeight");
+    var width = document.querySelector("#inputWidth");
+    const button = document.querySelector("input[type=submit]");
 
-// Not finished :/
-function make(size) {
-  container.style.setProperty('--size', size)
-  for (let i = 0; i < size * size; i++) {
-    const div = document.createElement('div')
-    div.classList.add('cell')
+    button.addEventListener("click", function (event) {
+        event.preventDefault();
+        var widthValue = width.value;
+        var heightValue = height.value;
+        PixelCanvas.makeGrid(widthValue, heightValue);
+    });
+};
 
-    div.addEventListener('mouseover', function(){
-        if(!draw) return
-        div.style.backgroundColor = color.value
-    })
-    div.addEventListener('mousdown', function(){
-        div.style.backgroundColor = color.value
-    })
+// Function that builds canvas and adds colors to grid
 
-    container.appendChild(div)
-  }
-}
-}
+PixelCanvas.makeGrid = function (width, height) {
 
-makeGrid(32);
+    const table = document.getElementById("pixelCanvas");
+    table.innerHTML = "";
+    var color = document.querySelector("#colorPicker");
+    var i = 0;
+    while (i < height) {
+        var tr = document.createElement("tr");
+        for (let j = 0; j < width; j++) {
+            var td = document.createElement("td");
+            td.classList.add("grid");
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+        i++;
+    }
+
+    table.addEventListener("click", function (event) {
+        if (event.target.tagName === "TD") {
+            var td = event.target;
+            td.style.backgroundColor = color.value;
+        }
+    });
+
+  
+};
+
+// Calls function
+
+PixelCanvas.getInput();

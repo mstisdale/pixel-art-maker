@@ -12,6 +12,10 @@ h2 {
     margin: 1em 0 0.25em;
 }
 
+h2:first-of-type {
+    margin-top: 0.5em;
+}
+
 table,
 tr,
 td {
@@ -33,22 +37,4 @@ td {
 
 input[type=number] {
     width: 6em;
-}
-
-:root {
-  --grid-cols: 1;
-  --grid-rows: 1;
-}
-
-.container {
-  display: grid;
-  grid-gap: 1em;
-  grid-template-rows: repeat(var(--grid-rows), 1fr);
-  grid-template-columns: repeat(var(--grid-cols), 1fr);
-}
-
-.grid-item {
-  padding: 1em;
-  border: 1px solid #ddd;
-  text-align: center;
 }

@@ -1,11 +1,15 @@
-// Setup canvas and get width and height values
+// Setup canvas
 
 var PixelCanvas = {};
+
+//  Get width, submit and height values
 
 PixelCanvas.getInput = function () {
     var height = document.querySelector("#inputHeight");
     var width = document.querySelector("#inputWidth");
     const button = document.querySelector("input[type=submit]");
+
+// Adds event listener to submit button that takes height/width values 
 
     button.addEventListener("click", function (event) {
         event.preventDefault();
@@ -33,6 +37,8 @@ PixelCanvas.makeGrid = function (width, height) {
         table.appendChild(tr);
         i++;
     }
+
+// Add event listener to clicks and gets background color
 
     table.addEventListener("click", function (event) {
         if (event.target.tagName === "TD") {
